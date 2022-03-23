@@ -23,6 +23,16 @@ const UserFind: React.FC = () => {
             <button disabled={!text} onClick={handleClick}>Search</button>
         </div>
         <div className="body">
+            
+                {
+                    userList && userList?.length === 0 && (
+                        <div className='not-found'>
+                            No User Found
+                        </div>
+                    )
+                    }
+               
+            </div>
             {userList && userList.map(user => {
                 return (
                     <div className='body-item'>
@@ -33,12 +43,10 @@ const UserFind: React.FC = () => {
                 )
             })}
         </div>
-        </div>
+        
     );
 };
 
 export default UserFind;
 
-function data(data: any) {
-    throw new Error('Function not implemented.');
-}
+
